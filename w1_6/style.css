@@ -1,0 +1,17 @@
+body {
+    background-color: blue;
+    padding: 5em;
+}
+
+.container {
+    background-color: orange;
+    border: 5px solid black;
+    padding: 2em;
+    margin: 2em 20em;
+}
+
+.container h1 {
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px blue;
+}
