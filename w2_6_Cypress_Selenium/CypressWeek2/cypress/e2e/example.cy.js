@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 describe("empty spec", () => {
     it("should visit", () => {
         // Login
