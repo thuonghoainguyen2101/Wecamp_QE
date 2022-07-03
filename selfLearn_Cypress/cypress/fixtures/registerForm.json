@@ -1,0 +1,14 @@
+{
+    "firstName": "TestFirstName",
+    "lastName": "TestLastName",
+    "phone": "123456789",
+    "userName": "test@gmail.com",
+    "address1": "TestAddress1",
+    "city": "TestCity",
+    "state": "TestState",
+    "postalCode": "TestPostalCode",
+    "country": "TestCountry",
+    "email": "test",
+    "password": "TestPassword",
+    "confirmPassword": "TestPassword"
+}
