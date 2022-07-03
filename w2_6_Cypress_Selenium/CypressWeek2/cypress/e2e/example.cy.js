@@ -29,6 +29,8 @@ describe("empty spec", () => {
 
         cy.get("input[name='findFlights']").click();
 
+        // cy.get("input[name='servClass']").first().check();
+
         cy.get("font:nth-child(1) > b > font:nth-child(1)").should(
             "be.visible"
         );

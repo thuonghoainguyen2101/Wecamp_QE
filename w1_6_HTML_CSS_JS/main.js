@@ -14,3 +14,13 @@ myImage.onclick = function () {
         myImage.setAttribute("src", "./img/firefox.png");
     }
 };
+
+let myName = prompt("Enter Your name");
+function changeName() {
+    localStorage.setItem("name", myName);
+    alert("Hello" + localStorage.getItem("name"));
+}
+
+if (!localStorage.getItem("name")) {
+    changeName();
+}
