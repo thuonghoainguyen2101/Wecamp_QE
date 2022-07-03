@@ -7,7 +7,7 @@
     "city": "TestCity",
     "state": "TestState",
     "postalCode": "TestPostalCode",
-    "country": "TestCountry",
+    "country": "VIETNAM",
     "email": "test",
     "password": "TestPassword",
     "confirmPassword": "TestPassword"

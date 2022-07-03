@@ -10,21 +10,23 @@ describe("empty spec", () => {
         cy.get('a[href="register.php"]').first().click();
 
         // fill out the form
-        cy.get('input[name="firstName"]').type("Cypress");
-        cy.get('input[name="lastName"]').type("Test");
-        cy.get('input[name="phone"]').type("1234567890");
-        cy.get('input[name="userName"]').type("cypress");
-        cy.get('input[name="address1"]').type("123 Main St");
-        cy.get('input[name="city"]').type("Anytown");
-        cy.get('input[name="state"]').type("CA");
-        cy.get('input[name="postalCode"]').type("12345");
-        cy.get('select[name="country"]')
-            .select("INDIA")
-            .should("have.value", "INDIA");
-        cy.get('input[name="email"]').type("test");
-        cy.get('input[name="password"]').type("password");
-        cy.get('input[name="confirmPassword"]').type("password");
-        cy.get('input[name="submit"]').click();
+        cy.fixture("registerForm.json").then((registerForm) => {
+            cy.get('input[name="firstName"]').type(registerForm.firstName);
+            cy.get('input[name="lastName"]').type(registerForm.lastName);
+            cy.get('input[name="phone"]').type(registerForm.phone);
+            cy.get('input[name="userName"]').type(registerForm.userName);
+            cy.get('input[name="address1"]').type(registerForm.address1);
+            cy.get('input[name="city"]').type(registerForm.city);
+            cy.get('input[name="state"]').type(registerForm.state);
+            cy.get('input[name="postalCode"]').type(registerForm.postalCode);
+            cy.get('select[name="country"]')
+                .select(registerForm.country)
+                .should("have.value", registerForm.country);
+            cy.get('input[name="email"]').type(registerForm.email);
+            cy.get('input[name="password"]').type(registerForm.password);
+            cy.get('input[name="confirmPassword"]').type(registerForm.password);
+            cy.get('input[name="submit"]').click();
+        });
 
         // assert that the user registered successfully
         cy.url().should("include", "/register_sucess.php");
@@ -35,9 +37,11 @@ describe("empty spec", () => {
         cy.get('a[href="login.php"]').click();
 
         // fill out the form
-        cy.get('input[name="userName"]').type("test");
-        cy.get('input[name="password"]').type("password");
-        cy.get('input[name="submit"]').click();
+        cy.fixture("registerForm.json").then((loginForm) => {
+            cy.get('input[name="userName"]').type(loginForm.email);
+            cy.get('input[name="password"]').type(loginForm.password);
+            cy.get('input[name="submit"]').click();
+        });
 
         // assert that the user logged in successfully
         cy.url().should("include", "/login_sucess.php");
@@ -48,36 +52,40 @@ describe("empty spec", () => {
         cy.get("a[href='reservation.php']").click();
 
         // fill out the form
-        cy.get('input[name="tripType"]')
-            .check("oneway")
-            .should("have.value", "oneway");
+        cy.fixture("flightInformation.json").then((flightInformation) => {
+            cy.get('input[name="tripType"]')
+                .check(flightInformation.tripType)
+                .should("have.value", flightInformation.tripType);
 
-        cy.get('select[name="passCount"]')
-            .select("2")
-            .should("have.value", "2");
-        cy.get('select[name="fromPort"]')
-            .select("London")
-            .should("have.value", "London");
-        cy.get('select[name="fromMonth"]')
-            .select("November")
-            .should("have.value", "11");
-        cy.get('select[name="fromDay"]')
-            .select("15")
-            .should("have.value", "15");
-        cy.get('select[name="toPort"]')
-            .select("Paris")
-            .should("have.value", "Paris");
-        cy.get('select[name="toMonth"]')
-            .select("November")
-            .should("have.value", "11");
-        cy.get('select[name="toDay"]').select("20").should("have.value", "20");
-        cy.get('input[name="servClass"]')
-            .check("Business")
-            .should("have.value", "Business");
-        cy.get('select[name="airline"]')
-            .select("Unified Airlines")
-            .should("have.value", "Unified Airlines");
-        cy.get('input[name="findFlights"]').click();
+            cy.get('select[name="passCount"]')
+                .select(flightInformation.passCount)
+                .should("have.value", flightInformation.passCount);
+            cy.get('select[name="fromPort"]')
+                .select(flightInformation.fromPort)
+                .should("have.value", flightInformation.fromPort);
+            cy.get('select[name="fromMonth"]')
+                .select(flightInformation.fromMonth)
+                .should("have.value", flightInformation.fromMonth);
+            cy.get('select[name="fromDay"]')
+                .select(flightInformation.fromDay)
+                .should("have.value", flightInformation.fromDay);
+            cy.get('select[name="toPort"]')
+                .select(flightInformation.toPort)
+                .should("have.value", flightInformation.toPort);
+            cy.get('select[name="toMonth"]')
+                .select(flightInformation.toMonth)
+                .should("have.value", flightInformation.toMonth);
+            cy.get('select[name="toDay"]')
+                .select(flightInformation.toDay)
+                .should("have.value", flightInformation.toDay);
+            cy.get('input[name="servClass"]')
+                .check(flightInformation.servClass)
+                .should("have.value", flightInformation.servClass);
+            cy.get('select[name="airline"]')
+                .select(flightInformation.airline)
+                .should("have.value", flightInformation.airline);
+            cy.get('input[name="findFlights"]').click();
+        });
 
         // assert that the flight search results are displayed
         cy.url().should("include", "/reservation2.php");

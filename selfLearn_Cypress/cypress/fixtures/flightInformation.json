@@ -1,0 +1,12 @@
+{
+    "tripType": "oneway",
+    "passCount": "2",
+    "fromPort": "London",
+    "fromMonth": "10",
+    "fromDay": "15",
+    "toPort": "Paris",
+    "toMonth": "11",
+    "toDay": "20",
+    "servClass": "Business",
+    "airline": "Unified Airlines"
+}
