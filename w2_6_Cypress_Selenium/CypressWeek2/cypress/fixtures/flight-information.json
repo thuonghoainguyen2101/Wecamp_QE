@@ -1,0 +1,12 @@
+{
+    "tripType": "roundtrip",
+    "passCount": "1",
+    "fromPort": "Acapulco",
+    "fromMonth": "12",
+    "fromDay": "15",
+    "toPort": "Acapulco",
+    "toMonth": "12",
+    "toDay": "5",
+    "servClass": "Economy",
+    "airline": "No Preference"
+}

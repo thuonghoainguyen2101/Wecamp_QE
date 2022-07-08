@@ -1,0 +1,8 @@
+{
+    "quantity": "4",
+    "amount": "80.00",
+    "card_number": "1234567890123456",
+    "expiration_month": "11",
+    "expiration_year": "2026",
+    "cvv_code": "766"
+}
