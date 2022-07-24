@@ -19,6 +19,7 @@ describe("Test case 3: Check payment flow (negative case if leaves Expiration Mo
 
             // Assert on "Please select an item in the list." from month dropdown
             //
+            cy.get("select[name='month']").invoke("val").should("equal", "");
         });
     });
 });

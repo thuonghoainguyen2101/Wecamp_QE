@@ -1,0 +1,14 @@
+{
+    "firstName": "Renai",
+    "lastName": "Kubota",
+    "userEmail": "email@gmail.com",
+    "gender": "Female",
+    "userNumber": "01234567890",
+    "dateOfBirthInput": "21/01/2001",
+    "subjectsInput": ["English", "Maths", "Accounting", "Chemistry"],
+    "hobbiesInput": ["Sports", "Reading", "Music"],
+    "uploadPicture": "",
+    "currentAddress": "Tokyo",
+    "state": "NCR",
+    "city": "Delhi"
+}

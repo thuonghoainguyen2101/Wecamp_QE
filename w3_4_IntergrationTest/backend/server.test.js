@@ -3,8 +3,11 @@
 // const supertest = require("supertest");
 // const request = supertest(app);
 
-const app = require("./server");
-const supertest = require("supertest");
+// const app = require("./server");
+// const supertest = require("supertest");
+
+import app from "./server";
+import supertest from "supertest";
 
 describe("intergration tests", () => {
     it("should return a 200 response", async () => {
